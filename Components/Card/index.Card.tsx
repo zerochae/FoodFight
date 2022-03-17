@@ -1,0 +1,35 @@
+import * as S from "Components/Card/style.Card";
+import * as T from "Types/index";
+
+import Image from "next/image";
+
+import { useState } from "react";
+import Detail from "Components/Detail/index.Detail";
+
+interface CardProps {
+  store: T.Stores;
+}
+
+const Card = ({ store }: CardProps): JSX.Element => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleIsOpen = () => {
+    setIsOpen(true);
+  };
+
+  return (
+    <S.Container>
+      <Image
+        src={store.thumb}
+        width={179.19}
+        height={179.19}
+        onClick={() => {
+          handleIsOpen();
+        }}
+      />
+      {isOpen && <Detail />}
+    </S.Container>
+  );
+};
+
+export default Card;

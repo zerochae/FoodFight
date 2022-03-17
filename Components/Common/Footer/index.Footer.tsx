@@ -5,8 +5,8 @@ const Footer = () => {
   return (
     <S.Container>
       <S.ItemList>
-        {Object.values(C.Footer.CONTENT).map((val) => {
-          return <S.Item>{val}</S.Item>;
+        {Object.values(C.Footer.CONTENT).map((val,index) => {
+          return <S.Item key={index}>{val}</S.Item>;
         })}
       </S.ItemList>
     </S.Container>
