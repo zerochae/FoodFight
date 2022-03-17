@@ -11,16 +11,6 @@ interface DetailProps {
   handleIsOpen: () => void;
 }
 
-const setDescription = (str: string) => {
-  const newStr = str.split(".").map((row) => (row += ".\n\n"));
-  newStr[newStr.length - 1] = newStr[newStr.length - 1].slice(
-    0,
-    newStr[newStr.length - 1].lastIndexOf(".")
-  );
-
-  return newStr.join("");
-};
-
 const Detail = ({ handleIsOpen, store }: DetailProps) => {
   return (
     <S.Container>
@@ -42,7 +32,7 @@ const Detail = ({ handleIsOpen, store }: DetailProps) => {
               </S.Header>
               <S.Body>
                 <S.Description>
-                  <h3>{setDescription(store.description)}</h3>
+                  <h3>{store.description}</h3>
                 </S.Description>
                 <S.Url>
                   {store.url && (

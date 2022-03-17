@@ -2,7 +2,11 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   height: 50px;
-  margin-top: 60px;
+  position: fixed;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
 `;
 
 export const ItemList = styled.ul`

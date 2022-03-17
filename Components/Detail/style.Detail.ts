@@ -67,6 +67,7 @@ export const Header = styled.div`
 
 export const Body = styled.div`
   white-space: pre-wrap;
+  line-height: 2;
 `;
 
 export const Description = styled.div`

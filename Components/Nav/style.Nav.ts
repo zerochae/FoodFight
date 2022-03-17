@@ -6,7 +6,7 @@ export const Container = styled.div`
   height: 94px;
   display: flex;
   z-index: 10;
-  justify-content: space-around;
+  justify-content: space-between;
 `;
 
 export const MenuList = styled.ul`
