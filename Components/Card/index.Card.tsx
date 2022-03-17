@@ -14,20 +14,22 @@ const Card = ({ store }: CardProps): JSX.Element => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleIsOpen = () => {
-    setIsOpen(true);
+    setIsOpen(!isOpen);
   };
 
   return (
     <S.Container>
-      <Image
-        src={store.thumb}
-        width={179.19}
-        height={179.19}
-        onClick={() => {
-          handleIsOpen();
-        }}
-      />
-      {isOpen && <Detail />}
+      <S.Inner>
+        <Image
+          src={store.thumb}
+          width={179.19}
+          height={179.19}
+          onClick={() => {
+            handleIsOpen();
+          }}
+        />
+      </S.Inner>
+      {isOpen && <Detail handleIsOpen={handleIsOpen} store={store} />}
     </S.Container>
   );
 };
