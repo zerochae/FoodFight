@@ -1,4 +1,6 @@
+export const TITLE = "AWESOME FOOD STORE";
+
 export const MENU = {
-  STORE: "STORE",
   ABOUT: "ABOUT",
+  STORE: "STORE",
 };
