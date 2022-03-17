@@ -1,4 +1,4 @@
-import * as S from "Pages/Store/style.Store";
+import * as S from "pages/Store/style.Store";
 
 import type { NextPage } from "next";
 

@@ -1,4 +1,4 @@
-import * as S from "Pages/Detail/style.Detail";
+import * as S from "pages/Detail/style.Detail";
 import type { NextPage } from "next";
 
 const Detail: NextPage = () => {

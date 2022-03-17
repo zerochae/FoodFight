@@ -20,6 +20,7 @@ export const MenuContainer = styled.li`
   padding: 24px;
   font-weight: 600;
   font-size: 18px;
+  cursor: pointer;
 `;
 
 export const Title = styled.span`

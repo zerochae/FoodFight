@@ -44,6 +44,13 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+a,a:visited,a:active,a:hover{
+	text-decoration: none;
+	color:#000;
+	outline: none;
+	background: none;
+}
 `;
 
 export default GlobalStyle;
