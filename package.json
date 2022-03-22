@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "concurrently \"next dev\" \"npx json-server db.json --port 9000\" ",
     "build": "next build",
-    "start": "next start",
+    "start": "concurrently \"next start\" \"npx json-server db.json --port 9000\" ",
     "lint": "next lint"
   },
   "dependencies": {
