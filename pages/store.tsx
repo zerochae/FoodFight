@@ -12,6 +12,8 @@ interface StoreProps {
 }
 
 const Store: NextPage<StoreProps> = ({ stores }) => {
+  console.log(process.env);
+
   return (
     <>
       <Head>
@@ -29,9 +31,9 @@ const Store: NextPage<StoreProps> = ({ stores }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const res = await fetch(`https://food-fight.vercel.app/api/stores`);
+  const res = await fetch(C.LOCAL_URL);
 
-  const stores = await res.json();
+  const stores = res && (await res.json());
   return {
     props: {
       stores,
