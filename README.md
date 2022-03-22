@@ -50,11 +50,33 @@ yarn dev (json-server 와 같이 실행 됩니다.)
 
 1. Next.js with Styled Components
 
-  - 새로고침 시 스타일이 풀려버리는 현상
-    - 해결방법: `.babelrc` 추가
-  -  초기 렌더링 시 잠시 스타일이 적용되어 있지 않은 현상
-  -  ![initialrender](https://user-images.githubusercontent.com/84373490/159487329-0cd31264-7e3e-4ac8-9b09-53129352438a.gif)
-  - js(ts)로 쓰여진 스타일을 읽기 전에 서버에서 렌더 되어 화면에 나타나기 때문에 발생하였습니다.
-  - 사용자 경험 측면에서 좋지 못합니다.
-  - 
-  
+- 새로고침 시 스타일이 풀려버리는 현상
+  - 해결 방법: `.babelrc` 추가
+- 초기 렌더링 시 잠시 스타일이 적용되어 있지 않은 현상
+- ![initialrender](https://user-images.githubusercontent.com/84373490/159487329-0cd31264-7e3e-4ac8-9b09-53129352438a.gif)
+- js(ts)로 쓰여진 스타일을 읽기 전에 서버에서 렌더 되어 화면에 나타나기 때문에 발생하였습니다.
+- 사용자 경험 측면에서 좋지 못합니다.
+  - 해결 방법: `pages/_document.tsx`를 추가하여 헤더에 스타일을 주입한다.
+
+2. deploy next.js with json-server
+
+- 배포했을 경우 배포 결과물을 json-server와 같이 실행시켜는 방법을 찾지 못했습니다.
+  - 해결 방법: `api handler` 추가
+  - url: 'https://food-fight.vercel.app/api/stores'
+
+```tsx
+export const getServerSideProps: GetServerSideProps = async () => {
+  const res = await fetch(
+    process.env.NODE_ENV === "production" 
+    ? C.PRODUCTION_URL //https://food-fight.vercel.app/api/stores
+    : C.LOCAL_URL // https://localhost:9000/stores
+  );
+
+  const stores = res && (await res.json());
+  return {
+    props: {
+      stores,
+    },
+  };
+};
+```
