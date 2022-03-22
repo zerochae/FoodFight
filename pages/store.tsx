@@ -1,4 +1,4 @@
-import * as S from 'Styles/style.store'
+import * as S from "Styles/style.store";
 import * as C from "Constants/index";
 import * as T from "Types/index";
 
@@ -29,7 +29,10 @@ const Store: NextPage<StoreProps> = ({ stores }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const res = await fetch(C.Store.PRODUCTION_URL);
+  const res = await fetch(
+    `https://food-fight-54pig5r6r-zerochae.vercel.app/api/stores`
+  );
+  console.log(res);
   const stores = await res.json();
 
   return {
