@@ -12,8 +12,6 @@ interface StoreProps {
 }
 
 const Store: NextPage<StoreProps> = ({ stores }) => {
-  console.log(process.env);
-
   return (
     <>
       <Head>
