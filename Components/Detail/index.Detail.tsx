@@ -38,6 +38,7 @@ const Detail = ({ handleIsOpen, store }: DetailProps) => {
           <S.Left>
             <Image
               src={store.image}
+              alt={store.name}
               width="100"
               height="98"
               layout="responsive"
