@@ -5,7 +5,7 @@ export const CONTENT = {
   IMG: "/images/about.jpg",
 };
 
-export const ROUTE = "/About";
+export const ROUTE = "/about";
 
 export const IMAGE_ALT = {
   MAIN: "MAIN",

@@ -10,7 +10,7 @@ const Nav = (): JSX.Element => {
         <S.Title>{C.Nav.TITLE}</S.Title>
         <S.MenuList>
           {Object.keys(C.Nav.MENU).map((key, index) => {
-            return <Menu key={index} content={key} link={C.Nav.MENU[key]} />;
+            return <Menu key={index} content={key} link={C.Nav.MENU[key].toLowerCase()} />;
           })}
         </S.MenuList>
       </S.Inner>
