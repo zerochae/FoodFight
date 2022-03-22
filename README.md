@@ -60,11 +60,32 @@ yarn dev (json-server 와 같이 실행 됩니다.)
 
 2. deploy next.js with json-server
 
-- 배포했을 경우 배포 결과물을 json-server와 같이 실행시켜는 방법을 찾지 못했습니다.
+- 배포했을 경우 배포 결과물을 json-server와 같이 실행시키는 방법을 고민하였습니다.
   - 해결 방법: `api handler` 추가
   - url: 'https://food-fight.vercel.app/api/stores'
 
 ```tsx
+// pages/api/store.ts
+
+import { NextApiHandler } from "next";
+import db from "db.json";
+
+const handler: NextApiHandler = (req, res) => {
+  try {
+    res.status(200).json(JSON.stringify(db.stores));
+  } catch (error) {
+    res.status(500).json({ message: "server-error" });
+  }
+};
+
+export default handler;
+```
+
+```tsx
+// pages/store.tsx 
+
+import * as C from "Constants/index";
+
 export const getServerSideProps: GetServerSideProps = async () => {
   const res = await fetch(
     process.env.NODE_ENV === "production" 
