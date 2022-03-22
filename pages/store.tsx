@@ -29,7 +29,7 @@ const Store: NextPage<StoreProps> = ({ stores }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const res = await fetch(C.Store.URL);
+  const res = await fetch(C.Store.PRODUCTION_URL);
   const stores = await res.json();
 
   return {
