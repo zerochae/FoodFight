@@ -53,6 +53,11 @@ a,a:visited,a:active,a:hover{
 	outline: none;
 	background: none;
 }
+
+html,body{
+	height: 100%;
+}
+
 `;
 
 export default GlobalStyle;

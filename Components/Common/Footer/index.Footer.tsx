@@ -4,11 +4,13 @@ import * as C from "Constants/index";
 const Footer = () => {
   return (
     <S.Container>
-      <S.ItemList>
-        {Object.values(C.Footer.CONTENT).map((val,index) => {
-          return <S.Item key={index}>{val}</S.Item>;
-        })}
-      </S.ItemList>
+      <S.Inner>
+        <S.ItemList>
+          {Object.values(C.Footer.CONTENT).map((val, index) => {
+            return <S.Item key={index}>{val}</S.Item>;
+          })}
+        </S.ItemList>
+      </S.Inner>
     </S.Container>
   );
 };
