@@ -20,7 +20,7 @@ const Card = ({ store }: CardProps): JSX.Element => {
   return (
     <S.Container>
       <S.Inner>
-        <Image
+        <S.StyledImage
           src={store.thumb}
           width={179.19}
           height={179.19}

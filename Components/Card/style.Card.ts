@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styled from "styled-components";
 
 export const Container = styled.li`
@@ -7,4 +8,8 @@ export const Container = styled.li`
 
 export const Inner = styled.div`
   cursor: pointer;
+`;
+
+export const StyledImage = styled(Image)`
+  border-radius: 8px;
 `;
