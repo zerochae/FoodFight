@@ -42,4 +42,19 @@ yarn dev (json-server 와 같이 실행 됩니다.)
 
 ✔️ 팝업 오른쪽 위에 X버튼을 넣고 누르면 팝업이 닫힘
 
+![error](https://user-images.githubusercontent.com/84373490/159486006-a4789b1c-b3a3-49ce-954a-ecc0525c5c3b.gif)
+
 ✔️ 정의하지 않은 url로 접근시 에러 페이지를 보여주고 5초 후 메인 페이지로 이동
+
+## 개발 중 이슈
+
+1. Next.js with Styled Components
+
+  - 새로고침 시 스타일이 풀려버리는 현상
+    - 해결방법: `.babelrc` 추가
+  -  초기 렌더링 시 잠시 스타일이 적용되어 있지 않은 현상
+  -  ![initialrender](https://user-images.githubusercontent.com/84373490/159487329-0cd31264-7e3e-4ac8-9b09-53129352438a.gif)
+  - js(ts)로 쓰여진 스타일을 읽기 전에 서버에서 렌더 되어 화면에 나타나기 때문에 발생하였습니다.
+  - 사용자 경험 측면에서 좋지 못합니다.
+  - 
+  
