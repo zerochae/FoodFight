@@ -14,10 +14,11 @@ export const Container = styled.div`
 
 export const Outer = styled.div`
   padding: 40px;
-  height: 100%;
+  height: 88%;
 `;
 
 export const Inner = styled.div`
+  margin-top: 24px;
   background-color: #fff;
   width: 100%;
   height: 100%;

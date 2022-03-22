@@ -3,7 +3,7 @@ import * as T from "Types/index";
 
 import Button from "Components/Button/index.Button";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 
 interface DetailProps {
@@ -12,6 +12,24 @@ interface DetailProps {
 }
 
 const Detail = ({ handleIsOpen, store }: DetailProps) => {
+  useEffect(() => {
+    document.body.style.cssText = `
+      position: fixed; 
+      top: -${window.scrollY}px;
+      overflow-y: scroll;
+      width: 1024px;
+      margin: 0 auto;
+      left:0;
+      right:0;
+      `;
+
+    return () => {
+      const scrollY = document.body.style.top;
+      document.body.style.cssText = "";
+      window.scrollTo(0, parseInt(scrollY || "0", 10) * -1);
+    };
+  }, []);
+
   return (
     <S.Container>
       <S.Outer>

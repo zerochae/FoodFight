@@ -6,12 +6,14 @@ import Link from "next/link";
 const Nav = (): JSX.Element => {
   return (
     <S.Container>
-      <S.Title>{C.Nav.TITLE}</S.Title>
-      <S.MenuList>
-        {Object.keys(C.Nav.MENU).map((key, index) => {
-          return <Menu key={index} content={key} link={C.Nav.MENU[key]} />;
-        })}
-      </S.MenuList>
+      <S.Inner>
+        <S.Title>{C.Nav.TITLE}</S.Title>
+        <S.MenuList>
+          {Object.keys(C.Nav.MENU).map((key, index) => {
+            return <Menu key={index} content={key} link={C.Nav.MENU[key]} />;
+          })}
+        </S.MenuList>
+      </S.Inner>
     </S.Container>
   );
 };

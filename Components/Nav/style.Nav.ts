@@ -1,11 +1,19 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 100%;
-  position: relative;
   height: 94px;
+  border-bottom: 1px solid #e5e5e5;
+  position: fixed;
+  top: 0;
+  width: 1024px;
+  z-index: 100;
+  background: #fff;
+  box-shadow: 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+`;
+
+export const Inner = styled.div`
+  height: 100%;
   display: flex;
-  z-index: 10;
   justify-content: space-between;
 `;
 
