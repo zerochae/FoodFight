@@ -5,6 +5,7 @@ import * as T from "Types/index";
 import type { NextPage, GetServerSideProps } from "next";
 
 import Card from "Components/Card/index.Card";
+import Head from "next/head";
 
 interface StoreProps {
   stores: T.Stores[];
@@ -12,13 +13,18 @@ interface StoreProps {
 
 const Store: NextPage<StoreProps> = ({ stores }) => {
   return (
-    <S.Container>
-      <S.CardList>
-        {stores.map((store, index) => {
-          return <Card key={index} store={store} />;
-        })}
-      </S.CardList>
-    </S.Container>
+    <>
+      <Head>
+        <title>AWESOME FOOD STORE_STORE</title>
+      </Head>
+      <S.Container>
+        <S.CardList>
+          {stores.map((store, index) => {
+            return <Card key={index} store={store} />;
+          })}
+        </S.CardList>
+      </S.Container>
+    </>
   );
 };
 

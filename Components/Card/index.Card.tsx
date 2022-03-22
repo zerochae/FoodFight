@@ -1,8 +1,6 @@
 import * as S from "Components/Card/style.Card";
 import * as T from "Types/index";
 
-import Image from "next/image";
-
 import { useState } from "react";
 import Detail from "Components/Detail/index.Detail";
 
