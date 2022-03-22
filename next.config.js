@@ -8,7 +8,6 @@ const nextConfig = {
     config.resolve.modules.push(__dirname); // 추가
     return config;
   },
-  pageExtensions: ["page.tsx", "page.ts"],
 };
 
 module.exports = nextConfig;

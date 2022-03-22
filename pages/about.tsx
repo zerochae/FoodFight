@@ -1,4 +1,4 @@
-import * as S from "pages/About/style.About";
+import * as S from "Styles/style.about";
 import * as C from "Constants/index";
 
 import Image from "next/image";

@@ -1,4 +1,4 @@
-import * as S from "pages/Store/style.Store";
+import * as S from 'Styles/style.store'
 import * as C from "Constants/index";
 import * as T from "Types/index";
 

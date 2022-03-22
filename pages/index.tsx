@@ -8,6 +8,8 @@ import { useEffect } from "react";
 const Home: NextPage = () => {
   const router = useRouter();
 
+  console.log("Dd")
+
   useEffect(() => {
     router.push(C.About.ROUTE);
   }, [router]);
