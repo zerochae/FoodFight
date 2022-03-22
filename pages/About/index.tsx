@@ -25,9 +25,9 @@ const About: NextPage = () => {
           </S.Right>
         </S.Inner>
         <S.ImageList>
-          {C.About.IMAGE_URL.map((url) => {
+          {C.About.IMAGE_URL.map((url,index) => {
             return (
-              <S.Item>
+              <S.Item key={index}>
                 <S.StyledImage src={url} width={179.19} height={179.19} />
               </S.Item>
             );
