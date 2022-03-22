@@ -29,9 +29,8 @@ const Store: NextPage<StoreProps> = ({ stores }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const res = await fetch(
-    `https://food-fight-54pig5r6r-zerochae.vercel.app/api/stores`
-  );
+  const res = await fetch(`https://food-fight.vercel.app/api/stores`);
+
   const stores = await res.json();
   return {
     props: {
